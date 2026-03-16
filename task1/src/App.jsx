@@ -26,9 +26,6 @@ function App() {
     // const updatedList = userList.filter((user)=> !user.id === id)
     // setUserList(updatedList)
 
-    const list = [...userList]
-    list.splice(id,1)
-    setUserList(list)
   }
 
 
@@ -58,7 +55,8 @@ function App() {
           </div>
 
           <div className='w-full'>
-            <img className='w-full rounded object-cover' src={Img} alt="" />
+            {/* we use random img because img is not available in json data  */}
+            <img className='w-full rounded object-cover' src={Img} alt="" />  
           </div>
         </div>
 
