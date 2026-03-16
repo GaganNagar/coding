@@ -5,6 +5,7 @@ function App() {
 
   const [userList, setUserList] = useState([])
   const [page, setPage] = useState(1)
+  const [loading, setLoading] = useState(true);
 
   useEffect(()=>{
     const fetchData = async ()=>{
@@ -15,8 +16,13 @@ function App() {
       setUserList(data)
       console.log(data)
     }
+ setLoading(true);
 
-    fetchData()
+    setTimeout(() => {
+      fetchData();
+      setLoading(false);
+    }, 5000);
+  
 
   },[page])
 
@@ -37,6 +43,14 @@ function App() {
     if(page < 6){
       setPage(page + 1)
     }
+  }
+
+ if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <h1 className="text-3xl font-bold">Loading...</h1>
+      </div>
+    );
   }
 
 
