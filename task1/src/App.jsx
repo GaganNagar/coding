@@ -4,7 +4,6 @@ import Img from '/image.png'
 
 
 function App() {
-  // const [count, setCount] = useState(0)
 
   const [userList, setUserList] = useState([])
   const [page, setPage] = useState(1)
@@ -23,8 +22,8 @@ function App() {
 
 
   const remove= (id)=>{
-    // const updatedList = userList.filter((user)=> !user.id === id)
-    // setUserList(updatedList)
+    const updatedList = userList.filter((user)=> !user.id === id)
+    setUserList(updatedList)
 
   }
 
